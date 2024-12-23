@@ -1,0 +1,76 @@
+existe = un fichier ou un dossier porte le nom
+Create user : 
+    -check si user existe
+    -check si password plus de 8 caract
+    -cree un dossier au nom du user
+    -cree un fichier au nom du user et ajoute au premiere ligne le password
+
+Connect user :
+    -check si user existe
+    -check si le password correspond
+
+Show tables : 
+    -prend tous les noms de table en dessous du password
+
+Create table :
+    =>create table ... nomDeColonne:domaine,
+    -check si table existe
+    -check si table est une relation
+    -cree un fichier au nom de la table et mets a la premier ligne les description de la forme : nomDeColonne:domaine,nomDeColonne:domaine,
+
+Describe table :
+    -check si table existe
+    -recupere la premiere ligne avec split
+
+Alter table : (une modif a la fois)
+    -check si table existe
+    -mets sous forme d une relation 
+    -procede a la modif de la relation
+        -ajout de attribut : check si conforme
+        -changement de nom attribut
+        -changement de type de l attribut : transtype
+    -ecrit dans le fichier en ecrasant
+
+Drop table :
+    -check si table existe
+    -supprime le fichier
+
+Truncate table : 
+    -check si table existe
+    -recupere la premiere ligne du fichier
+    -reecrit dans le fichier en ecrasant
+
+Insert into : (peut faire plrs insertions)
+    =>insert into ... (,,,) , ()
+    -check si table existe
+    -recupere la relation 
+    -divise la requete pour chaque ligne
+    -procede a l insertion en relation 
+        -verifie si les donnees n existent deja
+        -check de type : STRICT et sans transtype
+        -garder l indice des mauvais types
+    -ecrit dans le fichier ceux qui sont bons sans ecraser
+    -ecrit au client les mauvais types
+
+Update :
+    =>update ... set nomDeColonne=valeur (where + conditions)
+    -check si table existe
+    -recupere la relation
+    -check si le type correspond
+    -procede a la modofication si oui
+    -reecrit dans le fichier en ecrasant
+
+Delete from : 
+    =>delete from ... (where + conditions)
+    -check si table existe
+    -recupere la relation
+    -procede a la suppression de la relation
+    -reecrit dans le fichier en ecrasant
+
+Select from 
+    =>select from ... (join ... on ...) (where + conditions) (these + projection)
+    -check si table existe
+    -recupere la relation 
+    -remplit la conditions
+    -fait la jointure
+    -projette

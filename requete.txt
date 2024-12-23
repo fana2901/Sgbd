@@ -1,0 +1,7 @@
+alter table Ecole ADD num:int
+alter table Etudiant RENAME COLUMN anarana TO nom
+alter table Etudiant SET TYPE taona To double
+UPDATE Ecole SET nom=hei WHERE nom=iscam AND lieu=6
+UPDATE Ecole SET nom=itu WHERE lieu=6
+DELETE FROM Ecole WHERE nom=itu
+DELETE FROM Ecole WHERE nom=itu AND lieu=6
